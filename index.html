@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <script src="https://g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+  <title>护理管理平台</title>
+  <style>
+    .loader {
+  width: 100px;
+  height: 101px;
+  border: 8px solid;
+  border-top-color: hsl(154,100%,31%);
+  border-left-color: hsl(216,87%,52%);
+  border-bottom-color: hsl(8,66%,50%);
+  border-right-color: hsl(42,100%,51%);
+  border-radius: 50%;
+  transform: rotate(45deg);
+  margin: 30px auto;
+}
+.loader p {
+  display: inline-block;
+  width: 107px;
+  height: 107px;
+  /* The background is used to specify the border background */
+  background: linear-gradient(90deg, hsla(212,67%,36%,0) 0%,
+                                         hsla(207,69%,51%,0) 76%,
+                                         hsla(0,0%,100%,1) 85%,
+                                         hsla(0,0%,100%,1) 100%); /* W3C */
+  /* Background origin is the padding box by default.
+  Override to make the background cover the border as well. */
+  -moz-background-origin: border;
+  background-origin: border-box;
+  /* A transparent border determines the width */
+  border: 6px solid transparent;
+  border-radius: 50%;
+  box-shadow: inset -999px 0 0 #fff; /* The background color */
+  transform: translate(-8px, 55px);
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    0% { transform: translate(-9px, -25px) rotate(0deg); }
+  100% { transform: translate(-9px, -25px) rotate(360deg); }
+}
+  
+  </style>
+</head>
+
+<body>
+    <div class="loader" id="Loding">
+      <p></p>
+     </div>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+  
+  window.addEventListener("resize", function () {
+    if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+      window.setTimeout(function () {
+        document.activeElement.scrollIntoViewIfNeeded();
+      }, 0);
+    }
+  })
+
+  function IsOpened() {
+    // 打印机是否打开
+    return window.Printer.IsOpened()
+  }
+
+
+
+  function showDeviceList() {
+    // 显示蓝牙列表
+    window.Printer.showDeviceList()
+  }
+
+
+
+  function PortClose() {
+    // 关闭蓝牙
+   return window.Printer.PortClose()
+  }
+
+
+
+  function PrintText(data,date) {
+     
+    window.Printer.RowSetX("0");//设置X坐标
+    window.Printer.Setlp("5", "2", "32");//5:字体这个是默认值。2：字体大小。32：设置的整行的行高。
+    window.Printer.RowSetBold("2");//字体加粗2倍
+    window.Printer.PrintData(date + "\r\n");//小票内容
+
+    window.Printer.RowSetX("0");
+    window.Printer.Setlp("5", "0", "32");
+    window.Printer.RowSetBold("2");
+     window.Printer.PrintData( document.getElementsByClassName('print')[0].innerText + "\r\n");
+  }
+  
+  
+  //  安卓扫码
+  function setScanResult(v){
+ // alert(v);
+ // alert(v.data);
+  sessionStorage._setScanResult = JSON.stringify(v)
+  document.getElementById('_setScanResult').click()
+
+
+}
+ 
+function getBase64Image(img) {  
+     var canvas = document.createElement("canvas");  
+     canvas.width = img.width;  
+     canvas.height = img.height;  
+     var ctx = canvas.getContext("2d");  
+     ctx.drawImage(img, 0, 0, img.width, img.height);  
+     var ext = img.src.substring(img.src.lastIndexOf(".")+1).toLowerCase();  
+     var dataURL = canvas.toDataURL("image/"+ext);  
+     return dataURL;  
+}
+
+
+
+</script>
+
+</html>

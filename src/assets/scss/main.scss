@@ -1,0 +1,340 @@
+.icon_add {
+    width: 0.4rem;
+    height: 0.4rem;
+    border: 1px solid #5bacf9;
+    color: #5bacf9;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.4rem;
+    border-radius: 2px;
+    display: block;
+}
+
+._bg {
+    background-color: #f5f5f5;
+    box-sizing: border-box
+}
+
+.doing {
+    color: #f5a623 !important;
+}
+
+.done {
+    color: #3ac569 !important
+}
+
+.no {
+    color: #f66 !important
+}
+
+.blue {
+    color: #5bacf9 !important
+}
+
+.gray {
+    color: #bbb !important
+}
+
+.black {
+    color: #333 !important
+}
+
+//返回顶部
+.yd-backtop {
+    bottom: 15% !important;
+}
+
+.formItem {
+    h4 {
+        padding-left: 0.15rem;
+        font-size: 0.32rem;
+        color: #333;
+    }
+    span {
+        padding-left: 0.15rem;
+        font-size: 0.3rem;
+        color: #333;
+    }
+    b {
+        padding-left: 0.15rem;
+        font-size: 0.4rem;
+        color: #333;
+        font-weight: 520
+    }
+    i {
+        padding-left: 0.15rem;
+        font-size: 0.3rem;
+    }
+    button.s {
+        width: 1.1rem;
+    }
+    .yd-tab-panel {
+        background-color: #f5f5f5 !important;
+    }
+}
+
+//主页(home.vue)
+.menu .yd-grids-icon img {
+    height: 120% !important;
+}
+
+.menu .yd-grids-txt {
+    margin-top: 0.2rem !important;
+}
+
+.menu .yd-grids-3:before {
+    border-bottom: none !important;
+}
+
+.notice .yd-cell-left {
+    line-height: 9px;
+}
+
+.notice .yd-cell-box {
+    margin-bottom: 0px !important;
+}
+
+.notice .yd-cell:after {
+    border-bottom: none !important;
+}
+
+.notice .yd-preview {
+    span,
+    h4 {
+        font-size: 0.30rem !important;
+        color: #424242;
+        padding-left: 0.17rem;
+    }
+    h4 {
+        position: relative;
+    }
+    .no h4::before {
+        content: '';
+        background: red;
+        width: 0.14rem;
+        height: 0.14rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        left: -6px;
+    }
+}
+
+//业务开单
+.businessOpen {
+    input {
+        border: none;
+        width: 1.23rem;
+        margin-right: 0.2rem;
+    }
+    .yd-cell-box {
+        i {
+            font-size: 0.28rem;
+            color: #5bacf9;
+        }
+        b {
+            font-weight: normal;
+            padding-right: 0.15rem;
+            color: #bbb;
+            width: 1.8rem;
+            display: inline-block
+        }
+    }
+    .title {
+        font-size: 0.32rem;
+        font-weight: normal;
+    }
+    .yd-tab-panel {
+        background-color: #f5f5f5 !important;
+    }
+}
+
+.Bopen .yd-btn-block {
+    margin: 0.1rem !important;
+}
+
+// 考勤 attendance.vue
+.attendance {
+    .yd-cell {
+        position: unset;
+    }
+    .yd-cell-box {
+        margin-bottom: 0;
+    }
+    .yd-cell:after {
+        border-bottom: 0;
+    }
+}
+
+// 考勤 statistics.vue
+.statistics {
+    background: #fff;
+    .yd-cell {
+        position: unset;
+    }
+    .yd-cell-box {
+        margin-bottom: 0;
+    }
+    .yd-cell:after {
+        border-bottom: 0;
+    }
+    .yd-cell-box {
+        margin-bottom: 0
+    }
+}
+
+// 考勤 me.vue
+.me {}
+
+//客户管理
+.customer {
+    .yd-cell-arrow:after {
+        color: #5bacf9;
+    }
+}
+
+//新增客户 （母婴）
+.customerMo {
+    .yd-cell:after {
+        content: unset;
+    }
+    .yd-cell-item:not(:last-child):after {
+        content: unset;
+    }
+    height:100%;
+    background: #fff;
+    .yd-radio-icon {
+        vertical-align: middle;
+    }
+    .yd-radio {
+        padding-right: 1rem
+    }
+}
+
+//新增客户 （医护）
+.customerHs {
+    .yd-cell:after {
+        content: unset;
+    }
+    .yd-cell-item:not(:last-child):after {
+        content: unset;
+    }
+    height:100%;
+    background: #fff;
+    .yd-radio-icon {
+        vertical-align: middle;
+    }
+    .yd-radio {
+        padding-right: 1rem
+    }
+}
+
+.detailMo {
+    .yd-cell {
+        position: unset;
+    }
+    .yd-cell:after {
+        content: unset;
+    }
+}
+
+.allBed {
+    .yd-search {
+        background-color: #fff;
+    }
+    .yd-search-input {
+        background-color: #fff;
+    }
+    .yd-cell-box {
+        margin-bottom: 0;
+    }
+    .yd-radio-icon {
+        vertical-align: middle;
+    }
+    .yd-tab-active,
+    .yd-tab-panel-item {
+        height: 11rem;
+    }
+}
+
+//筛选框
+.mselect {
+    .yd-accordion-title {
+        flex-direction: row-reverse;
+    }
+    .yd-accordion-head-arrow {
+        display: none
+    }
+    .yd-accordion-content {
+        border-top: 1px solid #eee
+    }
+    .yd-radio-text {
+        font-size: 0.3rem
+    }
+}
+
+//产品名字
+.pro .yd-cell-left {
+    width: 70%;
+}
+//必填
+.bitian:before {
+    content: '*';
+    color: red;
+    font-size:0.5rem;
+    vertical-align: middle;
+}
+
+.yd_a_span{
+    .yd-accordion-title{
+        &>span{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.h100{
+    height: 100%;
+}
+
+//mSelect
+.m_slotR{
+    .yd-cell-right{
+        margin-left: 10px;
+        margin-right: 5px;
+        padding-right: 0px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        // border:1px solid rgb(201, 199, 199);
+    }
+}
+.m_noBottom{
+    .yd-cell-item{
+        &:not(:last-child):after{
+          
+                border-bottom: 0px
+          
+        }
+    }
+}
+
+.searchInput{
+   // padding-left: 0.2rem;
+    // border:1px solid rgb(201, 199, 199) !important;//*
+    border-radius: 5px !important;
+    height: 0.8rem !important;
+    
+  }
+
+  .m_button{
+    .yd-btn-block{
+        font-size: .26rem;
+        padding: 10px 0 10px 0;
+        border-radius: 0px !important;
+        margin-top: 0px !important;
+        height: 15% !important;
+    }
+  }
